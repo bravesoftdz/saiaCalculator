@@ -4,7 +4,7 @@ object frmsaiaCalc: TfrmsaiaCalc
   BorderIcons = [biSystemMenu]
   Caption = 'Tire Angles -> Machine Angles'
   ClientHeight = 417
-  ClientWidth = 211
+  ClientWidth = 360
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -13,7 +13,7 @@ object frmsaiaCalc: TfrmsaiaCalc
     StyledSettings = [Size, FontColor, Other]
     Position.X = 28.000000000000000000
     Position.Y = 3.000000000000000000
-    Size.Width = 155.000000000000000000
+    Size.Width = 269.000000000000000000
     Size.Height = 130.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'groupboxstyle'

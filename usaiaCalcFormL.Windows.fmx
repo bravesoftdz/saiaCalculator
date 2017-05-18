@@ -1,0 +1,19 @@
+inherited frmsaiaCalcL_Windows: TfrmsaiaCalcL_Windows
+  DesignerMasterStyle = 0
+  inherited ToolBar1: TToolBar
+    inherited Label5: TLabel
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  inherited GroupBox1: TGroupBox
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+  end
+  inherited GroupBox3: TGroupBox
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+  end
+  inherited ToolBar2: TToolBar
+    inherited GroupBox2: TGroupBox
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

@@ -1,0 +1,29 @@
+inherited frmsaiaCalcL_Surface: TfrmsaiaCalcL_Surface
+  ClientHeight = 1920
+  ClientWidth = 1080
+  DesignerMasterStyle = 0
+  inherited ToolBar1: TToolBar
+    Size.Width = 1080.000000000000000000
+    inherited Label5: TLabel
+      Size.Width = 1080.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  inherited GroupBox1: TGroupBox
+    Size.Width = 1080.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+  end
+  inherited GroupBox3: TGroupBox
+    Size.Width = 1080.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+  end
+  inherited btnClose: TButton
+    Size.Width = 1080.000000000000000000
+  end
+  inherited ToolBar2: TToolBar
+    Size.Width = 1080.000000000000000000
+    inherited GroupBox2: TGroupBox
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

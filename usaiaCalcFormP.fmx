@@ -1,0 +1,229 @@
+object frmsaiaCalcP: TfrmsaiaCalcP
+  Left = 0
+  Top = 0
+  Caption = 'Tire Angles -> Machine Angles'
+  ClientHeight = 567
+  ClientWidth = 384
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Orientations = []
+  FormFactor.Devices = []
+  OnKeyUp = FormKeyUp
+  OnResize = FormResize
+  DesignerMasterStyle = 0
+  object GroupBox1: TGroupBox
+    Align = Top
+    StyledSettings = [Other]
+    Position.Y = 48.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 107.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'groupboxstyle'
+    Text = 'Tire Angles'
+    TextSettings.Font.Family = '@Arial Unicode MS'
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TabOrder = 0
+    object fldTireSA: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      KeyboardType = DecimalNumberPad
+      FilterChar = '-.0123456789'
+      Text = '0'
+      TextSettings.HorzAlign = Trailing
+      Position.X = 57.000000000000000000
+      Position.Y = 27.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = fldTireSAClick
+    end
+    object fldTireIA: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      KeyboardType = DecimalNumberPad
+      FilterChar = '-.0123456789'
+      Text = '0'
+      TextSettings.HorzAlign = Trailing
+      Position.X = 57.000000000000000000
+      Position.Y = 65.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = fldTireSAClick
+    end
+    object Label1: TLabel
+      AutoSize = True
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 24.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 13.000000000000000000
+      Text = 'SA'#176':'
+      TabOrder = 3
+    end
+    object Label2: TLabel
+      AutoSize = True
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 27.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 27.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 13.000000000000000000
+      Text = 'IA'#176':'
+      TabOrder = 2
+    end
+  end
+  object btnClose: TButton
+    Align = Top
+    Position.Y = 357.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Close'
+    OnClick = btnCloseClick
+  end
+  object GroupBox3: TGroupBox
+    Align = Top
+    StyledSettings = [Size, FontColor, Other]
+    Position.Y = 251.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 106.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Machine Angles'
+    TextSettings.Font.Family = '@Arial Unicode MS'
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TabOrder = 3
+    object fldMachineSA: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      KeyboardType = DecimalNumberPad
+      ReadOnly = True
+      FilterChar = '-.0123456789'
+      Text = '0'
+      TextSettings.HorzAlign = Trailing
+      Position.X = 57.000000000000000000
+      Position.Y = 27.000000000000000000
+      HitTest = False
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object fldMachineIA: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      KeyboardType = DecimalNumberPad
+      ReadOnly = True
+      FilterChar = '-.0123456789'
+      Text = '0'
+      TextSettings.HorzAlign = Trailing
+      Position.X = 57.000000000000000000
+      Position.Y = 65.000000000000000000
+      HitTest = False
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label3: TLabel
+      AutoSize = True
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 24.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 13.000000000000000000
+      Text = 'SA'#176':'
+      TabOrder = 3
+    end
+    object Label4: TLabel
+      AutoSize = True
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 27.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 27.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 13.000000000000000000
+      Text = 'IA'#176':'
+      TabOrder = 2
+    end
+  end
+  object ToolBar1: TToolBar
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object Label5: TLabel
+      Align = Client
+      StyledSettings = [Family, FontColor]
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 13.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.HorzAlign = Center
+      Text = 'Convert Tire Angles to Machine Angles'
+      TabOrder = 0
+    end
+  end
+  object ToolBar2: TToolBar
+    Position.Y = 203.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object btnDecouple: TButton
+      Align = Center
+      Size.Width = 213.000000000000000000
+      Size.Height = 37.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Decouple'
+      OnClick = btnDecoupleClick
+    end
+  end
+  object ToolBar3: TToolBar
+    Position.Y = 155.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object GroupBox2: TGroupBox
+      Align = Center
+      StyledSettings = [FontColor, Other]
+      Size.Width = 277.000000000000000000
+      Size.Height = 45.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Tire Location:'
+      TextSettings.Font.Family = '@Arial Unicode MS'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TabOrder = 1
+      object rbLeft: TRadioButton
+        Align = FitLeft
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 77.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'radiobuttonstyle'
+        TabOrder = 0
+        Text = 'Left Side'
+      end
+      object rbRight: TRadioButton
+        Align = FitRight
+        StyledSettings = [Family, Style, FontColor]
+        IsChecked = True
+        Position.X = 192.000000000000000000
+        Size.Width = 85.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Right Side'
+      end
+    end
+  end
+end

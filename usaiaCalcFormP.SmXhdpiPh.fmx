@@ -1,0 +1,46 @@
+inherited frmsaiaCalcP_SmXhdpiPh: TfrmsaiaCalcP_SmXhdpiPh
+  ClientHeight = 375
+  ClientWidth = 250
+  DesignerMasterStyle = 0
+  inherited GroupBox1: TGroupBox
+    Size.Width = 250.000000000000000000
+    TextSettings.Font.Size = 13.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+  end
+  inherited btnClose: TButton
+    Size.Width = 250.000000000000000000
+  end
+  inherited GroupBox3: TGroupBox
+    Size.Width = 250.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    inherited Label3: TLabel
+      TabOrder = 4
+    end
+  end
+  inherited ToolBar1: TToolBar
+    Size.Width = 250.000000000000000000
+    inherited Label5: TLabel
+      Size.Width = 250.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+  inherited ToolBar2: TToolBar
+    Position.Y = 155.000000000000000000
+    Size.Width = 250.000000000000000000
+  end
+  inherited ToolBar3: TToolBar
+    Position.Y = 203.000000000000000000
+    Size.Width = 250.000000000000000000
+    inherited GroupBox2: TGroupBox
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      inherited rbLeft: TRadioButton
+        Padding.Left = 3.000000000000000000
+        Padding.Top = 3.000000000000000000
+        Padding.Right = 3.000000000000000000
+        Padding.Bottom = 3.000000000000000000
+        Position.X = 82.000000000000000000
+        Scale.X = 0.000000000000000000
+      end
+    end
+  end
+end

@@ -3,13 +3,15 @@ program saiaCalculator;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  usaiaCalcForm in 'usaiaCalcForm.pas' {frmsaiaCalc},
-  usaiaCalc in 'usaiaCalc.pas';
+  usaiaCalcFormP in 'usaiaCalcFormP.pas' {frmsaiaCalcP},
+  usaiaCalc in 'usaiaCalc.pas',
+  usaiaCalcFormL in 'usaiaCalcFormL.pas' {frmsaiaCalcL};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmsaiaCalc, frmsaiaCalc);
+  Application.CreateForm(TfrmsaiaCalcP, frmsaiaCalcP);
+  Application.CreateForm(TfrmsaiaCalcL, frmsaiaCalcL);
   Application.Run;
 end.
