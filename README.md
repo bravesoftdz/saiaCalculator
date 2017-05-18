@@ -18,12 +18,12 @@ This calculation is iterative in nature.  At least 3 iterations will give a reas
 *all angles are assumed to be in radians for the sake of the computation, conversion to degrees can occur afterwards if degrees are required.*
 
 ```pascal  
-*// Initialization*  
-decoupledIA = desiredIA  
-decoupledSA = desiredSA
+// Initialization  
+decoupledIA := desiredIA;  
+decoupledSA := desiredSA;
 
-*// iterative computation, 10x yields good result*  
-decoupledIA = ArcTan( Tan( desiredIA ) / Cos( decoupledSA ))  
-decoupledSA = ArcTan( Tan( desiredSA ) / Cos( decoupledIA ))  
+// iterative computation, 10x yields good result  
+decoupledIA := ArcTan( Tan( desiredIA ) / Cos( decoupledSA )):  
+decoupledSA := ArcTan( Tan( desiredSA ) / Cos( decoupledIA ));  
 ```
  
