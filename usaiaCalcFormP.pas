@@ -28,6 +28,11 @@ type
     GroupBox2: TGroupBox;
     rbLeft: TRadioButton;
     rbRight: TRadioButton;
+    GroupBox4: TGroupBox;
+    fldTireSAdbg: TEdit;
+    fldTireIAdbg: TEdit;
+    Label6: TLabel;
+    Label7: TLabel;
     procedure btnCloseClick(Sender: TObject);
     procedure btnDecoupleClick(Sender: TObject);
     procedure fldTireSAClick(Sender: TObject);
@@ -60,17 +65,21 @@ var tmpRes: TTuple<double, double>;
     dSA,
     dIA: string;
     lIA: double;
+    tmpDebug: TTuple<double, double>;
 begin
   dSA := fldTireSA.Text;
   dIA := fldTireIA.Text;
   if not dSA.IsEmpty and not dIA.IsEmpty then
   begin
     tmpRes := Determine_SAo_IAo(dSA.ToDouble, dIA.ToDouble);
-    lIA := tmpRes.Value2;
-    fldMachineSA.Text := format('%0.5f',[tmpRes.Value1]);
+    lIA := tmpRes.IAval;
+    fldMachineSA.Text := format('%0.5f',[tmpRes.SAval]);
     if rbLeft.IsChecked then
       lIA := -lIA;
     fldMachineIA.Text := format('%0.5f',[lIA]);
+    tmpDebug := Determine_dSA_dIA(tmpRes);
+    fldTireSAdbg.Text := format('%0.5f',[tmpDebug.SAval]);
+    fldTireIAdbg.Text := format('%0.5f',[tmpDebug.IAval]);
   end;
 end;
 

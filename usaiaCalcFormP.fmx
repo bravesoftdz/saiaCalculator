@@ -11,7 +11,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
   FormFactor.Devices = []
   OnKeyUp = FormKeyUp
   OnResize = FormResize
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
   object GroupBox1: TGroupBox
     Align = Top
     StyledSettings = [Other]
@@ -23,7 +23,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
     Text = 'Tire Angles'
     TextSettings.Font.Family = '@Arial Unicode MS'
     TextSettings.Font.StyleExt = {00070000000000000004000000}
-    TabOrder = 0
+    TabOrder = 1
     object fldTireSA: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       TabOrder = 0
@@ -58,7 +58,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
       Position.X = 24.000000000000000000
       Position.Y = 34.000000000000000000
       Size.Width = 30.000000000000000000
-      Size.Height = 19.000000000000000000
+      Size.Height = 18.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 13.000000000000000000
       Text = 'SA'#176':'
@@ -70,7 +70,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
       Position.X = 27.000000000000000000
       Position.Y = 72.000000000000000000
       Size.Width = 27.000000000000000000
-      Size.Height = 19.000000000000000000
+      Size.Height = 18.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 13.000000000000000000
       Text = 'IA'#176':'
@@ -79,11 +79,11 @@ object frmsaiaCalcP: TfrmsaiaCalcP
   end
   object btnClose: TButton
     Align = Top
-    Position.Y = 357.000000000000000000
+    Position.Y = 425.000000000000000000
     Size.Width = 384.000000000000000000
     Size.Height = 32.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 1
+    TabOrder = 2
     Text = 'Close'
     OnClick = btnCloseClick
   end
@@ -97,7 +97,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
     Text = 'Machine Angles'
     TextSettings.Font.Family = '@Arial Unicode MS'
     TextSettings.Font.StyleExt = {00070000000000000004000000}
-    TabOrder = 3
+    TabOrder = 4
     object fldMachineSA: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       TabOrder = 0
@@ -134,7 +134,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
       Position.X = 24.000000000000000000
       Position.Y = 34.000000000000000000
       Size.Width = 30.000000000000000000
-      Size.Height = 19.000000000000000000
+      Size.Height = 18.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 13.000000000000000000
       Text = 'SA'#176':'
@@ -146,7 +146,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
       Position.X = 27.000000000000000000
       Position.Y = 72.000000000000000000
       Size.Width = 27.000000000000000000
-      Size.Height = 19.000000000000000000
+      Size.Height = 18.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 13.000000000000000000
       Text = 'IA'#176':'
@@ -157,7 +157,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
     Size.Width = 384.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 4
+    TabOrder = 5
     object Label5: TLabel
       Align = Client
       StyledSettings = [Family, FontColor]
@@ -176,7 +176,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
     Size.Width = 384.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 5
+    TabOrder = 6
     object btnDecouple: TButton
       Align = Center
       Size.Width = 213.000000000000000000
@@ -192,7 +192,7 @@ object frmsaiaCalcP: TfrmsaiaCalcP
     Size.Width = 384.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 6
+    TabOrder = 7
     object GroupBox2: TGroupBox
       Align = Center
       StyledSettings = [FontColor, Other]
@@ -224,6 +224,73 @@ object frmsaiaCalcP: TfrmsaiaCalcP
         TabOrder = 1
         Text = 'Right Side'
       end
+    end
+  end
+  object GroupBox4: TGroupBox
+    Align = Top
+    StyledSettings = [Other]
+    Position.Y = 357.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 68.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'groupboxstyle'
+    Text = 'Tire Angles (debug)'
+    TextSettings.Font.Family = '@Arial Unicode MS'
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TabOrder = 0
+    object fldTireSAdbg: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      KeyboardType = DecimalNumberPad
+      ReadOnly = True
+      FilterChar = '-.0123456789'
+      Text = '0'
+      TextSettings.HorzAlign = Trailing
+      Position.X = 57.000000000000000000
+      Position.Y = 27.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = fldTireSAClick
+    end
+    object fldTireIAdbg: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      KeyboardType = DecimalNumberPad
+      ReadOnly = True
+      FilterChar = '-.0123456789'
+      Text = '0'
+      TextSettings.HorzAlign = Trailing
+      Position.X = 221.000000000000000000
+      Position.Y = 27.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = fldTireSAClick
+    end
+    object Label6: TLabel
+      AutoSize = True
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 24.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 30.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 13.000000000000000000
+      Text = 'SA'#176':'
+      TabOrder = 3
+    end
+    object Label7: TLabel
+      AutoSize = True
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 191.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 27.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 13.000000000000000000
+      Text = 'IA'#176':'
+      TabOrder = 2
     end
   end
 end

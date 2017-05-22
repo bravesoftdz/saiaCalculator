@@ -64,8 +64,8 @@ begin
   if not dSA.IsEmpty and not dIA.IsEmpty then
   begin
     tmpRes := Determine_SAo_IAo(dSA.ToDouble, dIA.ToDouble);
-    lIA := tmpRes.Value2;
-    fldMachineSA.Text := format('%0.5f',[tmpRes.Value1]);
+    lIA := tmpRes.IAval;
+    fldMachineSA.Text := format('%0.5f',[tmpRes.SAval]);
     if rbLeft.IsChecked then
       lIA := -lIA;
     fldMachineIA.Text := format('%0.5f',[lIA]);
