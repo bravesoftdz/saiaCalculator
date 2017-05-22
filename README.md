@@ -24,6 +24,6 @@ decoupledSA := desiredSA;
 
 // iterative computation, 10x yields good result  
 decoupledIA := ArcTan( Tan( desiredIA ) / Cos( decoupledSA )):  
-decoupledSA := ArcTan( Tan( desiredSA ) / Cos( decoupledIA ));  
+decoupledSA := ArcTan( Tan( desiredSA ) * Cos( decoupledIA ));  
 ```
  
