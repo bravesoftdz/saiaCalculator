@@ -7,10 +7,9 @@ object frmsaiaCalcP: TfrmsaiaCalcP
   Position = Designed
   FormFactor.Width = 320
   FormFactor.Height = 480
-  FormFactor.Orientations = []
+  FormFactor.Orientations = [Landscape, InvertedPortrait, InvertedLandscape]
   FormFactor.Devices = []
   OnKeyUp = FormKeyUp
-  OnResize = FormResize
   DesignerMasterStyle = 3
   object GroupBox1: TGroupBox
     Align = Top
