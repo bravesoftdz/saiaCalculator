@@ -36,7 +36,6 @@ type
     procedure btnCloseClick(Sender: TObject);
     procedure btnDecoupleClick(Sender: TObject);
     procedure fldTireSAClick(Sender: TObject);
-    procedure FormResize(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
   private
@@ -94,23 +93,6 @@ begin
 {$ifdef ANDROID}
   if Key = vkHardwareBack then
     Key := 0; // avoid the default back action.
-{$endif}
-end;
-
-procedure TfrmsaiaCalcP.FormResize(Sender: TObject);
-begin
-{$ifdef ANDROID}
-  if (Height < Width) and (Visible) and Assigned(frmsaiaCalcL) then
-  begin
-    frmsaiaCalcL.fldTireSA.Text := fldTireSA.Text;
-    frmsaiaCalcL.fldTireIA.Text := fldTireIA.Text;
-    frmsaiaCalcL.rbLeft.IsChecked := rbLeft.IsChecked;
-    frmsaiaCalcL.rbRight.IsChecked := rbRight.IsChecked;
-    frmsaiaCalcL.fldMachineSA.Text := fldMachineSA.Text;
-    frmsaiaCalcL.fldMachineIA.Text := fldMachineIA.Text;
-    frmsaiaCalcL.Show;
-//    Hide;
-  end;
 {$endif}
 end;
 
