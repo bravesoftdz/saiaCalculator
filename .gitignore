@@ -59,3 +59,5 @@ __history/
 Android/Release/
 
 *.res
+
+Android/Debug/
