@@ -2,10 +2,19 @@ inherited frmsaiaCalcP_Windows: TfrmsaiaCalcP_Windows
   DesignerMasterStyle = 3
   inherited GroupBox1: TGroupBox
     TextSettings.Font.StyleExt = {00070000000000000004000000}
+    inherited fldTireSA: TNumberBox
+      Value = 25.000000000000000000
+    end
   end
   inherited GroupBox3: TGroupBox
-    Position.Y = 203.000000000000000000
+    Position.Y = 169.000000000000000000
     TextSettings.Font.StyleExt = {00070000000000000004000000}
+    inherited Label3: TLabel
+      TabOrder = 1
+    end
+    inherited fldMachineSA: TNumberBox
+      TabOrder = 2
+    end
   end
   inherited ToolBar1: TToolBar
     inherited Label5: TLabel
@@ -13,26 +22,11 @@ inherited frmsaiaCalcP_Windows: TfrmsaiaCalcP_Windows
     end
   end
   inherited ToolBar2: TToolBar
-    Position.Y = 309.000000000000000000
+    Position.Y = 242.000000000000000000
   end
   inherited ToolBar3: TToolBar
-    inherited GroupBox2: TGroupBox
+    inherited lblTireLocation: TLabel
       TextSettings.Font.StyleExt = {00070000000000000004000000}
-      inherited rbLeft: TRadioButton
-        Align = None
-        Position.X = 52.000000000000000000
-        Position.Y = 12.000000000000000000
-        Size.Height = 30.000000000000000000
-      end
-      inherited rbRight: TRadioButton
-        Align = None
-        Position.X = 140.000000000000000000
-        Position.Y = 12.000000000000000000
-        Size.Height = 30.000000000000000000
-      end
     end
-  end
-  inherited GroupBox4: TGroupBox
-    TextSettings.Font.StyleExt = {00070000000000000004000000}
   end
 end

@@ -6,14 +6,24 @@ inherited frmsaiaCalcP_LgXhdpiPh: TfrmsaiaCalcP_LgXhdpiPh
     Size.Width = 450.000000000000000000
     TextSettings.Font.Size = 13.000000000000000000
     TextSettings.Font.StyleExt = {00070000000000000004000000}
+    inherited fldTireSA: TNumberBox
+      Value = 25.000000000000000000
+    end
   end
   inherited btnClose: TButton
+    Position.Y = 663.000000000000000000
     Size.Width = 450.000000000000000000
   end
   inherited GroupBox3: TGroupBox
-    Position.Y = 203.000000000000000000
+    Position.Y = 169.000000000000000000
     Size.Width = 450.000000000000000000
     TextSettings.Font.StyleExt = {00070000000000000004000000}
+    inherited Label3: TLabel
+      TabOrder = 1
+    end
+    inherited fldMachineSA: TNumberBox
+      TabOrder = 2
+    end
   end
   inherited ToolBar1: TToolBar
     Size.Width = 450.000000000000000000
@@ -23,35 +33,23 @@ inherited frmsaiaCalcP_LgXhdpiPh: TfrmsaiaCalcP_LgXhdpiPh
     end
   end
   inherited ToolBar2: TToolBar
-    Position.Y = 309.000000000000000000
+    Position.Y = 242.000000000000000000
     Size.Width = 450.000000000000000000
   end
   inherited ToolBar3: TToolBar
     Size.Width = 450.000000000000000000
-    inherited GroupBox2: TGroupBox
+    inherited swchTireLocation: TSwitch
+      Position.X = 386.000000000000000000
+      Position.Y = 11.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 26.000000000000000000
+    end
+    inherited lblTireLocation: TLabel
       TextSettings.Font.StyleExt = {00070000000000000004000000}
-      inherited rbLeft: TRadioButton
-        Align = None
-        Padding.Left = 3.000000000000000000
-        Padding.Top = 3.000000000000000000
-        Padding.Right = 3.000000000000000000
-        Padding.Bottom = 3.000000000000000000
-        Position.X = 23.000000000000000000
-        Position.Y = 16.000000000000000000
-        Size.Width = 88.000000000000000000
-        Size.Height = 29.000000000000000000
-      end
-      inherited rbRight: TRadioButton
-        Align = None
-        Position.X = 167.000000000000000000
-        Position.Y = 16.000000000000000000
-        Size.Width = 88.000000000000000000
-        Size.Height = 29.000000000000000000
-      end
     end
   end
-  inherited GroupBox4: TGroupBox
+  inherited ImageControl1: TImageControl
     Size.Width = 450.000000000000000000
-    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Size.Height = 373.000000000000000000
   end
 end
