@@ -10,7 +10,7 @@ type
   end;
 
  function Determine_SAo_IAo(dSA, dIA: Double): TTuple<Double, Double>;
- function Determine_dSA_dIA(aMachine: TTuple<double, double>): TTuple<double, double>;
+ function Determine_dSA_dIA(aSA, aIA: Double): TTuple<double, double>;
 
 
 implementation
@@ -44,20 +44,14 @@ begin
   result := TTuple<double, double>.Create(aSA, aIA);
 end;
 
-function Determine_dSA_dIA(aMachine: TTuple<double, double>): TTuple<double, double>;
+function Determine_dSA_dIA(aSA, aIA: Double): TTuple<double, double>;
 var dSA,
     dIA: double;
-
-    aSA,
-    aIA: double;
-
     aSArad,
     aIArad,
     dSArad,
     dIArad: double;
 begin
-  aSA := aMachine.SAval;
-  aIA := aMachine.IAval;
   aSArad := aSA * pi / 180;
   aIArad := aIA * pi / 180;
 
