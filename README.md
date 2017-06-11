@@ -29,7 +29,7 @@ decoupledIA := ArcTan( Tan( desiredIA ) / Cos( decoupledSA )):
 decoupledSA := ArcTan( Tan( desiredSA ) * Cos( decoupledIA ));  
 ```
  
-#### **Equation to "Couple" the Angles:  
+#### **Equation to "Couple" the Angles:**  
 
 ```pascal
 coupledSA := ArcTan(Tan(decoupledSA) / Cos(decoupledIA));  
