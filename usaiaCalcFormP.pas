@@ -5,39 +5,38 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Edit, FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Edit, FMX.Controls.Presentation, FMX.StdCtrls, FMX.EditBox, FMX.NumberBox;
 
 type
   TfrmsaiaCalcP = class(TForm)
     GroupBox1: TGroupBox;
-    fldTireSA: TEdit;
-    fldTireIA: TEdit;
     btnClose: TButton;
     Label1: TLabel;
     Label2: TLabel;
     GroupBox3: TGroupBox;
-    fldMachineSA: TEdit;
-    fldMachineIA: TEdit;
-    Label3: TLabel;
-    Label4: TLabel;
     ToolBar1: TToolBar;
     Label5: TLabel;
     ToolBar2: TToolBar;
-    btnDecouple: TButton;
+    btnTireToMachine: TButton;
     ToolBar3: TToolBar;
-    GroupBox2: TGroupBox;
-    rbLeft: TRadioButton;
-    rbRight: TRadioButton;
-    GroupBox4: TGroupBox;
-    fldTireSAdbg: TEdit;
-    fldTireIAdbg: TEdit;
-    Label6: TLabel;
-    Label7: TLabel;
+    swchTireLocation: TSwitch;
+    lblTireLocation: TLabel;
+    fldTireSA: TNumberBox;
+    fldTireIA: TNumberBox;
+    btnMachineToTire: TButton;
+    Label3: TLabel;
+    fldMachineSA: TNumberBox;
+    Label4: TLabel;
+    fldMachineIA: TNumberBox;
+    ImageControl1: TImageControl;
     procedure btnCloseClick(Sender: TObject);
-    procedure btnDecoupleClick(Sender: TObject);
-    procedure fldTireSAClick(Sender: TObject);
+    procedure btnTireToMachineClick(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
+    procedure swchTireLocationSwitch(Sender: TObject);
+    procedure fldTireSAClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnMachineToTireClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,7 +47,7 @@ var
   frmsaiaCalcP: TfrmsaiaCalcP;
 
 implementation
-uses usaiaCalcFormL, usaiaCalc;
+uses usaiaCalc;
 
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
@@ -59,32 +58,55 @@ begin
   Close;
 end;
 
-procedure TfrmsaiaCalcP.btnDecoupleClick(Sender: TObject);
+procedure TfrmsaiaCalcP.btnMachineToTireClick(Sender: TObject);
 var tmpRes: TTuple<double, double>;
-    dSA,
-    dIA: string;
+    aSA: double;
+    aIA: double;
     lIA: double;
-    tmpDebug: TTuple<double, double>;
 begin
-  dSA := fldTireSA.Text;
-  dIA := fldTireIA.Text;
-  if not dSA.IsEmpty and not dIA.IsEmpty then
+  aSA := fldMachineSA.Value;
+  aIA := fldMachineIA.Value;
+  if not aSA.IsNan and not aIA.IsNan then
   begin
-    tmpRes := Determine_SAo_IAo(dSA.ToDouble, dIA.ToDouble);
+    tmpRes := Determine_dSA_dIA(aSA, aIA);
     lIA := tmpRes.IAval;
-    fldMachineSA.Text := format('%0.5f',[tmpRes.SAval]);
-    if rbLeft.IsChecked then
+    fldTireSA.Value := tmpRes.SAval;
+    if not swchTireLocation.IsChecked then
       lIA := -lIA;
-    fldMachineIA.Text := format('%0.5f',[lIA]);
-    tmpDebug := Determine_dSA_dIA(tmpRes);
-    fldTireSAdbg.Text := format('%0.5f',[tmpDebug.SAval]);
-    fldTireIAdbg.Text := format('%0.5f',[tmpDebug.IAval]);
+    fldTireIA.Value := lIA;
+  end;
+end;
+
+procedure TfrmsaiaCalcP.btnTireToMachineClick(Sender: TObject);
+var tmpRes: TTuple<double, double>;
+    dSA: double;
+    dIA: double;
+    lIA: double;
+begin
+  dSA := fldTireSA.Value;
+  dIA := fldTireIA.Value;
+  if not dSA.IsNan and not dIA.IsNan then
+  begin
+    tmpRes := Determine_SAo_IAo(dSA, dIA);
+    lIA := tmpRes.IAval;
+    fldMachineSA.Value := tmpRes.SAval;
+    if not swchTireLocation.IsChecked then
+      lIA := -lIA;
+    fldMachineIA.Value := lIA;
   end;
 end;
 
 procedure TfrmsaiaCalcP.fldTireSAClick(Sender: TObject);
 begin
-  (Sender as TEdit).SelectAll;
+  (Sender as TNumberBox).SelectAll;
+end;
+
+procedure TfrmsaiaCalcP.FormCreate(Sender: TObject);
+begin
+  fldTireSA.Value := 0;
+  fldTireIA.Value := 0;
+  fldMachineSA.Value := 0;
+  fldMachineIA.Value := 0;
 end;
 
 procedure TfrmsaiaCalcP.FormKeyUp(Sender: TObject; var Key: Word;
@@ -94,6 +116,14 @@ begin
   if Key = vkHardwareBack then
     Key := 0; // avoid the default back action.
 {$endif}
+end;
+
+procedure TfrmsaiaCalcP.swchTireLocationSwitch(Sender: TObject);
+begin
+  if (sender as TSwitch).IsChecked then
+    lblTireLocation.Text := 'Tire Location: Right Front'
+  else
+    lblTireLocation.Text := 'Tire Location: Left Front';
 end;
 
 end.
